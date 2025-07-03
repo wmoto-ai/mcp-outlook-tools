@@ -30,7 +30,7 @@ A Model Context Protocol (MCP) server implementation that enables AI assistants 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/mcp-outlook-tools.git
+git clone https://github.com/wmoto-ai/mcp-outlook-tools.git
 cd mcp-outlook-tools
 ```
 
@@ -67,7 +67,10 @@ Add the following to your Claude Desktop configuration file:
         "-m",
         "outlook_tools.server"
       ],
-      "cwd": "C:/path/to/mcp-outlook-tools"
+      "cwd": "C:/path/to/mcp-outlook-tools",
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
     }
   }
 }
