@@ -30,7 +30,7 @@ Microsoft Outlookとの連携を可能にするModel Context Protocol (MCP)サ�
 
 1. リポジトリをクローン：
 ```bash
-git clone https://github.com/yourusername/mcp-outlook-tools.git
+git clone https://github.com/wmoto-ai/mcp-outlook-tools.git
 cd mcp-outlook-tools
 ```
 
@@ -67,7 +67,10 @@ Claude Desktopの設定ファイルに以下を追加：
         "-m",
         "outlook_tools.server"
       ],
-      "cwd": "C:/path/to/mcp-outlook-tools"
+      "cwd": "C:/path/to/mcp-outlook-tools",
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
     }
   }
 }
