@@ -1,0 +1,59 @@
+{
+  "dxt_version": "0.1",
+  "name": "mcp-outlook-tools",
+  "version": "0.1.0",
+  "display_name": "Outlook Tools",
+  "description": "MCP server for Outlook calendar and email management",
+  "long_description": "This Desktop Extension provides comprehensive Outlook integration capabilities including calendar management, email sending, and email searching functionalities. It enables AI assistants to interact with Microsoft Outlook for scheduling appointments, sending emails with confirmation, and searching through your email history.",
+  "author": {
+    "name": "wmoto-ai"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "src/outlook_tools/server.py",
+    "mcp_config": {
+      "command": "python",
+      "args": [
+        "${__dirname}/src/outlook_tools/server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "${__dirname}/src",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  },
+  "compatibility": {
+    "platforms": ["win32"],
+    "python": ">=3.10"
+  },
+  "tools": [
+    {
+      "name": "add_appointment",
+      "description": "Add a new appointment to Outlook calendar with details like subject, time, location, and categories"
+    },
+    {
+      "name": "get_calendar",
+      "description": "Retrieve calendar appointments for a specified date range"
+    },
+    {
+      "name": "send_email",
+      "description": "Send an email through Outlook with display confirmation before sending"
+    },
+    {
+      "name": "search_contact",
+      "description": "Search for contacts in Outlook by name"
+    },
+    {
+      "name": "search_email",
+      "description": "Search emails by date and keyword in subject or body"
+    }
+  ],
+  "user_config": {
+    "outlook_profile": {
+      "title": "Outlook Profile",
+      "description": "Outlook profile to use (optional, uses default if not specified)",
+      "type": "string",
+      "required": false
+    }
+  }
+}
